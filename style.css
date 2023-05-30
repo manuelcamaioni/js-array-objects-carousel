@@ -94,6 +94,6 @@ h1, p{
 }
 
 
-.miniature-item.active img{
+div.miniature-item.active img{
     opacity: 1;
 }

@@ -60,6 +60,8 @@ const btnNext = document.getElementById('next-button');
 
 // miniature implementation
 const miniaturesContainer = document.querySelector('div.miniatures');
+
+
 images.forEach((imgMiniature) => {
     miniaturesContainer.innerHTML +=  
     `<div class="miniature-item">
@@ -67,10 +69,11 @@ images.forEach((imgMiniature) => {
     </div>`;
 });
 
+const listOfMiniatureNodes = document.querySelectorAll('div.miniature-item');
+const arrayMiniatures = Array.from(listOfMiniatureNodes);
+const activeMiniature = arrayMiniatures[activeIndex];
 
-const miniatureItem = document.querySelectorAll('div.miniature-item');
-const arrayMiniatures = Array.from(miniatureItem);
-
+activeMiniature.classList.add('active');
 
 
 
@@ -90,16 +93,16 @@ arrayMiniatures.forEach((miniatureEvent) => {
 
 function autoplay (){
     const activeImage = arrayImages[activeIndex];
-    activeImage.classList.remove('active');
-    
+    arrayMiniatures[activeIndex].classList.remove('active');
     if(activeIndex === images.length - 1){
         activeIndex = 0;
 
     } else{
         activeIndex = activeIndex + 1;
     }
-
+    activeImage.classList.remove('active');
     arrayImages[activeIndex].classList.add('active');
+    arrayMiniatures[activeIndex].classList.add('active');
     
 }
 
@@ -110,7 +113,8 @@ setInterval(autoplay, 5000);
 btnBack.addEventListener('click', function() {
     const activeImage = arrayImages[activeIndex];
     activeImage.classList.remove('active');
-
+    arrayMiniatures[activeIndex].classList.remove('active');
+    
     if(activeIndex === 0){
         activeIndex = images.length - 1;
 
@@ -119,12 +123,14 @@ btnBack.addEventListener('click', function() {
     }
     
     arrayImages[activeIndex].classList.add('active');
+    arrayMiniatures[activeIndex].classList.add('active');
 });
 
 btnNext.addEventListener('click', function() {
     const activeImage = arrayImages[activeIndex];
     activeImage.classList.remove('active');
-    
+    arrayMiniatures[activeIndex].classList.remove('active');
+
     if(activeIndex === images.length - 1){
         activeIndex = 0;
 
@@ -133,5 +139,6 @@ btnNext.addEventListener('click', function() {
     }
     
     arrayImages[activeIndex].classList.add('active');
+    arrayMiniatures[activeIndex].classList.add('active');
 });
 
