@@ -71,17 +71,20 @@ images.forEach((imgMiniature) => {
 const miniatureItem = document.querySelectorAll('div.miniature-item');
 const arrayMiniatures = Array.from(miniatureItem);
 
+
+
+
+
 arrayMiniatures.forEach((miniatureEvent) => {
     const selectedMiniature = arrayMiniatures.indexOf(miniatureEvent);
     miniatureEvent.addEventListener('click', () =>{
-        
         if(activeIndex !== selectedMiniature){
             const activeImage = arrayImages[activeIndex];
             activeImage.classList.remove('active');
             activeIndex = selectedMiniature;
             arrayImages[activeIndex].classList.add('active');     
         } 
-    });   
+    });
 });
 
 
@@ -97,6 +100,7 @@ function autoplay (){
     }
 
     arrayImages[activeIndex].classList.add('active');
+    
 }
 
 setInterval(autoplay, 5000);

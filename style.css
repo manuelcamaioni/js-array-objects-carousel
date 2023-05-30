@@ -93,6 +93,7 @@ h1, p{
     opacity: 1;
 }
 
-.miniature-item img:active, .miniature-item img:focus{
-    border: 1px hidden white;
+
+.miniature-item.active img{
+    opacity: 1;
 }
