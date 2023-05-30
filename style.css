@@ -33,3 +33,7 @@ main{
     color: grey;
     opacity: .6;
 }
+
+.active{
+    display: block;
+}
