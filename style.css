@@ -33,11 +33,10 @@ button{
     border: none;
 }
 
-button .bi{
+button .left-arrow, button .right-arrow{
     transition: all .5s;
 }
-
-button .bi:hover{
+button .left-arrow:hover, button .right-arrow:hover{
     color:white;
     opacity: 1;
 }
@@ -96,4 +95,13 @@ h1, p{
 
 div.miniature-item.active img{
     opacity: 1;
+    scale: 1.1;
+}
+
+.controls{
+    font-size: 2rem;
+}
+
+.controls i{
+    color: rgb(139, 139, 139);
 }

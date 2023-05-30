@@ -106,15 +106,13 @@ function autoplay (){
     
 }
 
-setInterval(autoplay, 5000);
-
 
 // BUTTONS EVENTS
 btnBack.addEventListener('click', function() {
     const activeImage = arrayImages[activeIndex];
     activeImage.classList.remove('active');
     arrayMiniatures[activeIndex].classList.remove('active');
-    
+
     if(activeIndex === 0){
         activeIndex = images.length - 1;
 
@@ -142,3 +140,38 @@ btnNext.addEventListener('click', function() {
     arrayMiniatures[activeIndex].classList.add('active');
 });
 
+const playBtnElement = document.getElementById('play-button');
+const altBtnElement = document.getElementById('alt-button');
+const reverseBtnElement = document.getElementById('reverse-button');
+
+
+
+playBtnElement.addEventListener('click', () => {
+    const intervalEvent = setInterval(autoplay, 1000);
+        altBtnElement.addEventListener('click', () => {
+            clearInterval(intervalEvent);
+    });
+});
+
+reverseBtnElement.addEventListener('click', () => {
+    const reverseIntervalEvent = setInterval(reverseAutoplay, 1000);
+    altBtnElement.addEventListener('click', () => {
+        clearInterval(reverseIntervalEvent);
+    });
+})
+
+function reverseAutoplay (){
+    const activeImage = arrayImages[activeIndex];
+    arrayMiniatures[activeIndex].classList.remove('active');
+    activeImage.classList.remove('active');
+    if(activeIndex === 0){
+        activeIndex = images.length - 1;
+
+    } else{
+        activeIndex = activeIndex - 1;
+    }
+    
+    arrayImages[activeIndex].classList.add('active');
+    arrayMiniatures[activeIndex].classList.add('active');
+    
+}
