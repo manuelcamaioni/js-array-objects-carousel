@@ -72,16 +72,18 @@ const miniatureItem = document.querySelectorAll('div.miniature-item');
 const arrayMiniatures = Array.from(miniatureItem);
 
 arrayMiniatures.forEach((miniatureEvent) => {
+    const selectedMiniature = arrayMiniatures.indexOf(miniatureEvent);
     miniatureEvent.addEventListener('click', () =>{
-        const selectedMiniature = arrayMiniatures.indexOf(miniatureEvent);
+        
         if(activeIndex !== selectedMiniature){
             const activeImage = arrayImages[activeIndex];
             activeImage.classList.remove('active');
             activeIndex = selectedMiniature;
             arrayImages[activeIndex].classList.add('active');     
         } 
-    });
+    });   
 });
+
 
 function autoplay (){
     const activeImage = arrayImages[activeIndex];
@@ -93,11 +95,11 @@ function autoplay (){
     } else{
         activeIndex = activeIndex + 1;
     }
-    
+
     arrayImages[activeIndex].classList.add('active');
 }
 
-let a = setInterval(autoplay, 2000);
+setInterval(autoplay, 2000);
 
 
 // BUTTONS EVENTS
@@ -115,8 +117,6 @@ btnBack.addEventListener('click', function() {
     arrayImages[activeIndex].classList.add('active');
 });
 
-
-
 btnNext.addEventListener('click', function() {
     const activeImage = arrayImages[activeIndex];
     activeImage.classList.remove('active');
@@ -130,5 +130,4 @@ btnNext.addEventListener('click', function() {
     
     arrayImages[activeIndex].classList.add('active');
 });
-
 
