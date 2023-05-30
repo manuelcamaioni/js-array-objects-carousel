@@ -43,17 +43,17 @@ let activeIndex = 0;
 images.forEach((imgElement) => {
         sliderElement.innerHTML += 
         `<div class="slider-item">
+            <h1 class="position-absolute top-0 end-0">${imgElement.title}</h1>
             <img src="${imgElement.image}" alt="${imgElement.title} pic">
+            <p class="position-absolute bottom-0 end-0 fs-3 ps-6">${imgElement.text}</p>
         </div>`;
 });
 
 console.log(sliderElement)
 
 const listNodesOfImages = document.querySelectorAll('div.slider-item');
-
 const arrayImages = Array.from(listNodesOfImages);
 arrayImages[activeIndex].classList.add('active');
-
 
 console.log(activeIndex);
 
@@ -88,8 +88,3 @@ btnNext.addEventListener('click', function() {
     arrayImages[activeIndex].classList.add('active');
 });
 
-// for(let i = 0; i < arrayImages.length; i++){
-//     if(arrayImages.indexOf(arrayImages[i]) === activeIndex){
-//         arrayImages[i].classList.add('active');
-//     }
-// }
