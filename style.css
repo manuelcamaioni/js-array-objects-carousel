@@ -3,3 +3,22 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+main{
+    width: 1110px;
+    margin: 0 auto;
+    padding: 3rem 0;
+}
+
+.slider{
+    width: 100%;
+    height: 800px;
+    overflow: hidden;
+}
+
+.slider img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+   
+}
