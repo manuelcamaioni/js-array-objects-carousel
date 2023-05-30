@@ -49,13 +49,10 @@ images.forEach((imgElement) => {
         </div>`;
 });
 
-console.log(sliderElement)
 
 const listNodesOfImages = document.querySelectorAll('div.slider-item');
 const arrayImages = Array.from(listNodesOfImages);
 arrayImages[activeIndex].classList.add('active');
-
-console.log(activeIndex);
 
 const btnBack = document.getElementById('back-button');
 const btnNext = document.getElementById('next-button');
