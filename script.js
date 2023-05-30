@@ -90,23 +90,6 @@ arrayMiniatures.forEach((miniatureEvent) => {
     });
 });
 
-
-function autoplay (){
-    const activeImage = arrayImages[activeIndex];
-    arrayMiniatures[activeIndex].classList.remove('active');
-    if(activeIndex === images.length - 1){
-        activeIndex = 0;
-
-    } else{
-        activeIndex = activeIndex + 1;
-    }
-    activeImage.classList.remove('active');
-    arrayImages[activeIndex].classList.add('active');
-    arrayMiniatures[activeIndex].classList.add('active');
-    
-}
-
-
 // BUTTONS EVENTS
 btnBack.addEventListener('click', function() {
     const activeImage = arrayImages[activeIndex];
@@ -160,6 +143,8 @@ reverseBtnElement.addEventListener('click', () => {
     });
 })
 
+// FUNCTIONS
+
 function reverseAutoplay (){
     const activeImage = arrayImages[activeIndex];
     arrayMiniatures[activeIndex].classList.remove('active');
@@ -171,6 +156,21 @@ function reverseAutoplay (){
         activeIndex = activeIndex - 1;
     }
     
+    arrayImages[activeIndex].classList.add('active');
+    arrayMiniatures[activeIndex].classList.add('active');
+    
+}
+
+function autoplay (){
+    const activeImage = arrayImages[activeIndex];
+    arrayMiniatures[activeIndex].classList.remove('active');
+    if(activeIndex === images.length - 1){
+        activeIndex = 0;
+
+    } else{
+        activeIndex = activeIndex + 1;
+    }
+    activeImage.classList.remove('active');
     arrayImages[activeIndex].classList.add('active');
     arrayMiniatures[activeIndex].classList.add('active');
     

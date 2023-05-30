@@ -104,4 +104,10 @@ div.miniature-item.active img{
 
 .controls i{
     color: rgb(139, 139, 139);
+    transition: color .5s;
+}
+
+
+.controls i:hover{
+    color: rgb(49, 49, 49);
 }
