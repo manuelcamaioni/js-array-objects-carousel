@@ -71,7 +71,8 @@ h1, p{
 
 .miniatures{
     background-color: rgba(0, 0, 0, .4);
-    height: 5rem;
+    height: 8rem;
+    border-radius: .25rem;
 }
 
 .miniature-item{
@@ -82,4 +83,15 @@ h1, p{
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: 80% center;
+    opacity: .6;
+    transition: all .5s;
+}
+
+.miniature-item img:hover{
+    opacity: 1;
+}
+
+.miniature-item img:active, .miniature-item img:focus{
+    border: 1px solid white;
 }
