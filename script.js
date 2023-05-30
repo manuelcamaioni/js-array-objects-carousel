@@ -99,7 +99,7 @@ function autoplay (){
     arrayImages[activeIndex].classList.add('active');
 }
 
-setInterval(autoplay, 2000);
+setInterval(autoplay, 5000);
 
 
 // BUTTONS EVENTS
