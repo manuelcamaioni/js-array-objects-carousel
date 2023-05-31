@@ -81,12 +81,14 @@ activeMiniature.classList.add('active');
 arrayMiniatures.forEach((miniatureEvent) => {
     const selectedMiniature = arrayMiniatures.indexOf(miniatureEvent);
     miniatureEvent.addEventListener('click', () =>{
-        if(activeIndex !== selectedMiniature){
+      
             const activeImage = arrayImages[activeIndex];
+            
+            arrayMiniatures[activeIndex].classList.remove('active');
             activeImage.classList.remove('active');
             activeIndex = selectedMiniature;
-            arrayImages[activeIndex].classList.add('active');     
-        } 
+            arrayImages[activeIndex].classList.add('active');
+            arrayMiniatures[activeIndex].classList.add('active');
     });
 });
 
